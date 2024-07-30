@@ -15,13 +15,13 @@ namespace QR
             string link = "https://in.linkedin.com/";
             string file = "C:\\Users\\Admin\\source\\repos\\QR codes\\demo12.png";
             string logofile = "C:\\Users\\Admin\\source\\repos\\QR codes\\locobuzz_logo.jpg";
-            //int errorCorrectionLevel = (int)QRCodeWriter.QrErrorCorrectionLevel.Highest;
+            int errorCorrectionLevel = (int)QRCodeWriter.QrErrorCorrectionLevel.Highest;
             QRCodeLogo logo = new QRCodeLogo(logofile);
-            GeneratedBarcode barcode = IronBarCode.BarcodeWriter.CreateBarcode(link,BarcodeEncoding.QRCode);
-            barcode.SaveAsPng("C:\\Users\\Admin\\source\\repos\\QR codes\\"+file);
-            //GeneratedBarcode QRcodewithLogo = QRCodeWriter.CreateQrCodeWithLogo(link, logo, errorCorrectionLevel);
-            //QRcodewithLogo.ResizeTo(500, 500).SetMargins(15).ChangeBarCodeColor(Color.Black);
-            //QRcodewithLogo.SaveAsPng(file);
+            //GeneratedBarcode barcode = IronBarCode.BarcodeWriter.CreateBarcode(link,BarcodeEncoding.QRCode);
+            //barcode.SaveAsPng("C:\\Users\\Admin\\source\\repos\\QR codes\\"+file);
+            GeneratedBarcode QRcodewithLogo = QRCodeWriter.CreateQrCodeWithLogo(link, logo, errorCorrectionLevel);
+            QRcodewithLogo.ResizeTo(500, 500).SetMargins(15).ChangeBarCodeColor(Color.Black);
+            QRcodewithLogo.SaveAsPng(file);
 
         }
     }
